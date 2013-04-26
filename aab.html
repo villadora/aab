@@ -1,22 +1,39 @@
 <head>
   <title>AA Balance</title>
+  <
 </head>
 <body>
 	{{> header}}
-
+	{{> footer}}
 </body>
 
 
 <template name="header">
-	<header class="navbar navbar-fix-top">
-		<div class="navbar-inner">
-			<a class="brand" href="/">AAB</a>
-			<ul class="nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">Hisotry</a></li>
-				<li><a href="#">Balance</a></li>
-			</ul>
-		</div>
-	</header>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#top">AA记录本</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="/">Home</a></li>
+              <li><a href="/balance">Balance</a></li>
+              <li><a href="/new">New</a></li>
+              <li><a href="/history">History</a></li>
+            </ul>
+            <a href="#" class="btn btn-warning">Toggle Bootstrap</a>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 </template>
 
+
+<template name="footer">
+	<footer>
+	</footer>
+</template>
