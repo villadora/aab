@@ -1,42 +1,65 @@
 <head>
-  <title>AA Balance</title>
-  <
+  <title>AAB</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	{{> header}}
-	{{> footer}}
+  {{> header}}
+  <div class="container">
+    {{> content}}
+    <hr/>
+    {{> footer}}
+  </div>
 </body>
 
 
-<template name="header">
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#top">AA记录本</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li><a href="/">首页</a></li>
-              <li><a href="/balance">帐本</a></li>
-              <li><a href="/new">新增纪录</a></li>
-              <li><a href="/history">查看历史</a></li>
-            </ul>
-            <form class="form-search">
-              <input type="text" class="input-medium search-query">
-              <button type="submit" class="btn btn-primary">Search</button>
-            </form>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
+<template name="content">
+    <div id="content" class="row">
+        {{> home}}
+        {{> new}}
+        {{> balance}}
     </div>
 </template>
 
 
+<template name="header">
+  <div id="header" class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#top">{{title}}</a>
+        <ul class="nav">
+          {{#each navItems}}
+          <li{{#if active}} class="active"{{/if}}>
+          <a link="{{link}}">{{label}}</a>
+        </li>
+        {{/each}}
+      </ul>
+      <div class="nav-collapse collapse">
+        <form class="navbar-search">
+          <input type="text" class="search-query" placeholder="Search">
+        </form>
+        <div>
+        </div>
+      </div><!--/.nav-collapse -->
+      {{#if currentUser}}
+      <p class="navbar-text pull-rigth">Welcome, {{currentUser}}</p>
+      {{else}}
+      <form class="navbar-form pull-right">
+        <button type="submit" class="btn btn-primary">Sign In</button>
+      </form>
+      {{/if}}
+    </div>
+  </div>
+</div>
+</template>
+
+
 <template name="footer">
-	<footer>
-	</footer>
+  <footer class="footer">
+    @2013 villadora with help of <a href="http://twitter.github.io/bootstrap/index.html">Twiiter Bootstrap</a> and <a href="http://meteor.com/">Meteor</a>
+  </footer>
 </template>

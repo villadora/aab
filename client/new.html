@@ -1,0 +1,69 @@
+<head></head>
+<body></body>
+
+<template name="new">
+    <div id="new" class="row">
+        <form class="form-horizontal offset1 span10">
+            <fieldset>
+                <legend>新增AA纪录</legend>
+                <div class="control-group">
+                    <label class="control-label" for="date">日期</label>
+                    <div class="controls">
+                        <input type="text" class="span2 dp" value="02/16/12" data-date-format="mm/dd/yy">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="shop">就餐商户</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="shop">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="payer">付款人</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="payer">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="joiners">就餐人员</label>
+                    <div class="controls">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th class="span3">参与人</th>
+                                    <th>金额</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each joiners}}
+                                <tr>
+                                    <td>{{name}}</td>
+                                    <td>{{amount}}{{#if amount}}元{{/if}}</td>
+                                </tr>
+                                {{/each}}
+                                <tr class="editTr">
+                                    <td><input type="text" class="input-media"></td>
+                                    <td><input type="number" class="input-small">
+                                        <button class="btn btn-small" type="button">保存</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="clear:both"></div>
+                        <button class="btn" type="button">新增</button>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="note">备注</label>
+                    <div class="controls">
+                        <textarea class="input-xlarge" id="note" rows="2"></textarea>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-success">保存</button>
+                    <button class="btn">取消</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</template>

@@ -9,4 +9,5 @@ preserve-inputs
 bootstrap
 jquery
 underscore
-coffeescript
+accounts-base
+stylus

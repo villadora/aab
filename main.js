@@ -1,9 +1,12 @@
-if (Meteor.isClient) {
-  Template.hello.greeting = function () {
-    return "Welcome to aab.";
-  };
+/** 
+  * Setup Data Model Repository
+  */
+Logins = new Meteor.Collection("logins");     // users collection stores user profiles
+Records = new Meteor.Collection("records"); // records collection stores balance records
 
-  Template.hello.events({
+
+if (Meteor.isClient) {
+  Template.header.events({
     'click input' : function () {
       // template data, if any, is available in 'this'
       if (typeof console !== 'undefined')
@@ -15,5 +18,7 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
+
+  
   });
 }

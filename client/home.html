@@ -1,0 +1,42 @@
+<head></head>
+<body></body>
+
+  <template name="lastRecord">
+    <div class="row lastRecord">
+      <div class="offset1 span10">
+        <div class="row">
+          <!-- nested grid layout -->
+          <div class="span10">
+            <h3>Recent Records</h3>
+            <div class="row">
+              <table class="table table-striped table-condensed span10">
+                <thead>
+                  <tr>
+                    {{#each headers}}
+                    <th>{{this}}</th>
+                    {{/each}}
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each items}}
+                  <tr>
+                    <td class="date">{{date}}</td>
+                    <td>{{location}}</td>
+                    <td>{{amount}}</td>
+                    <td></td>
+                  </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+<template name="home">
+  <div id="home" class="active row">
+    {{> lastRecord}}
+  </div>
+</template>
