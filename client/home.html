@@ -18,14 +18,15 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {{#each items}}
+                  {{#each_with_index items}}
                   <tr>
+                    <td>{{index}}</td>
                     <td class="date">{{date}}</td>
                     <td>{{location}}</td>
                     <td>{{amount}}</td>
                     <td></td>
                   </tr>
-                  {{/each}}
+                  {{/each_with_index}}
                 </tbody>
               </table>
             </div>

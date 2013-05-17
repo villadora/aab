@@ -1,10 +1,13 @@
-  Accounts.loginServiceConfiguration.remove({
-  	service:'google'
-  });
+//=============================
+// Login Configuration
+//=============================
+Accounts.loginServiceConfiguration.remove({
+  service: "google"
+});
 
-  Accounts.loginServiceConfiguration.insert({
-  	service:'google',
-  	clientId:'957710221875.apps.googleusercontent.com',
-  	secret:'-TLIhXDU5-T8SQEp92i9uUci'
-  });
-  
+Accounts.loginServiceConfiguration.insert({
+  service: "google",
+  clientId: "826031576233.apps.googleusercontent.com",
+  secret: "ml7-ETY29nJfo_vaX7DU1jPv"
+});
+

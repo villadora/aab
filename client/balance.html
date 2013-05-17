@@ -7,9 +7,8 @@
             <div class="row">
                 <!-- nested grid layout -->
                 <div class="span10">
-                    <h3>个人最近记录</h3>
-                    <div class="row">
-                    </div>
+                    <h3>历史纪录记录</h3>
+                    
                     <div class="row">
                         <table class="table table-striped table-condensed span10">
                             <thead>
@@ -30,6 +29,21 @@
                                 {{/each}}
                             </tbody>
                         </table>
+                    </div>
+                    <div class="pagination pagination-centered">
+                        <ul class="span10">
+                            <li>
+                                <a href="#">Prev</a>
+                            </li>
+                            {{#each pagers}}
+                            <li{{#if active}} class="active"{{/if}}{{#if disable}} class="disabled"{{/if}}>
+                                <a href="#">{{page}}</a>
+                            </li>
+                            {{/each}}
+                            <li>
+                                <a href="#">Next</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
